@@ -1,0 +1,29 @@
+﻿// test
+
+jQuery( document ).ready(function() {
+
+
+	jQuery('#usuarios').change(function() {
+
+		var nusers = jQuery('#usuarios').val();
+		jQuery('#btn-mini-monthly').attr("href", "/?buy=true&id=4500&users=" + nusers);
+
+	});
+
+	jQuery('#usuarios').keyup(function() {
+
+		var nusers = jQuery('#usuarios').val();
+		jQuery('#btn-mini-monthly').attr("href", "/?buy=true&id=4500&users=" + nusers);
+
+	});
+
+	jQuery('#odontograma').change(function() {
+
+		var odontogram = jQuery('#odontograma').prop('checked');
+		jQuery('#btn-pro-monthly').attr("href", "/?buy=true&id=3917&odontogram=" + odontogram);
+
+	});
+
+
+});
+

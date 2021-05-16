@@ -1,0 +1,40 @@
+
+jQuery( document ).ready(function() {
+
+		return;
+
+		var data = {
+			'action': 'get_select_box_prices',
+		};
+		jQuery.post('/wp-admin/admin-ajax.php', data, function(response) {
+
+			jQuery('div.titulos > div.nombre_atributo').append(response);
+
+			jQuery('.precio').each(function(){
+
+		        var price = jQuery(this).children('.moneda').text().replace(',', '.').replace(/[^0-9\.]+/g, '');
+				var html = '<input class="moneda-original" type="hidden" value="' + price + '" />';
+
+			    jQuery(this).append(html);
+			});
+
+			// Evento del select de cambio de precios
+		    jQuery('#conv-currency-select-box').on('change', function() {
+
+		        var that = this;
+
+		        jQuery('.precio').each(function( index ) {
+
+		            var price = jQuery(this).children('.moneda-original').val();
+		            var converted = (price * that.value).toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,'); // redondeamos a dos decimales y le damos formato
+
+		            jQuery(this).children('.moneda').html(converted + ' $');
+
+		        });
+
+		    });
+
+		});
+
+ });
+

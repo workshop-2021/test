@@ -1,0 +1,49 @@
+.netelip_c2c_resaltar {
+	border-color:red;
+	background-color:#F8E0E0;
+}
+
+.netelip_c2c_barraCss {
+	width: 100%;
+	height: 30px;
+	margin-bottom: 10px;
+}
+
+.netelip_c2c_barraCss_color {
+	background-color: #008ED6;
+}
+
+.netelip_c2c_botonCerrarCss {
+	float: right;
+	margin: 5px;
+	width: 20px;
+	height: 20px;
+	background-color: white;
+	text-align: center;
+	cursor: pointer;
+}
+
+.netelip_c2c_containerCSS {
+	float: left;
+	border: 1px solid black;
+	display: block;
+	background-color: white;
+	z-index: 999999;
+	position: absolute;
+}
+
+.netelip_c2c_fontType {
+	font-family: 'proxima_nova_rgregular', Arial, Helvetica, sans-serif;
+	/*font-size: 0.9rem;*/
+}
+
+.netelip_c2c_label {
+	width: 50%;
+	margin-right: 10px;
+}
+
+@media (max-width: 530px) {
+	.netelip_c2c_containerCSS {
+		width: 320px !important;
+	}
+}
